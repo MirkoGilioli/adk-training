@@ -9,7 +9,6 @@ load_dotenv()
 
 # Define constants for this example agent
 AGENT_NAME = "bigquery"
-APP_NAME = "bigquery_app"
 GEMINI_MODEL = "gemini-2.5-flash"
 
 # Define a tool configuration to block any write operations
