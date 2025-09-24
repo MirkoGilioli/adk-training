@@ -1,0 +1,285 @@
+{
+    "paths": {
+      "/events/": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Event"
+                    }
+                  }
+                }
+              }
+            },
+            "default": {
+              "$ref": "#/components/responses/DEFAULT_ERROR"
+            }
+          },
+          "summary": "List all events",
+          "tags": [
+            "events"
+          ],
+          "description": "Returns a list of all available events."
+        },
+        "post": {
+          "responses": {
+            "422": {
+              "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+            },
+            "201": {
+              "description": "Created",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            },
+            "default": {
+              "$ref": "#/components/responses/DEFAULT_ERROR"
+            }
+          },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          },
+          "summary": "Create a new event",
+          "tags": [
+            "events"
+          ],
+          "description": "Adds a new event to the collection."
+        }
+      },
+      "/events/{event_id}": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            },
+            "default": {
+              "$ref": "#/components/responses/DEFAULT_ERROR"
+            }
+          },
+          "summary": "Get a single event",
+          "tags": [
+            "events"
+          ],
+          "description": "Fetches an event by its unique ID."
+        },
+        "put": {
+          "responses": {
+            "422": {
+              "$ref": "#/components/responses/UNPROCESSABLE_ENTITY"
+            },
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            },
+            "default": {
+              "$ref": "#/components/responses/DEFAULT_ERROR"
+            }
+          },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EventUpdate"
+                }
+              }
+            }
+          },
+          "summary": "Update an event",
+          "tags": [
+            "events"
+          ],
+          "description": "Updates an existing event's details."
+        },
+        "delete": {
+          "responses": {
+            "204": {
+              "description": "Event deleted successfully."
+            },
+            "default": {
+              "$ref": "#/components/responses/DEFAULT_ERROR"
+            }
+          },
+          "summary": "Delete an event",
+          "tags": [
+            "events"
+          ],
+          "description": "Removes an event from the collection."
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "event_id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ]
+      }
+    },
+    "info": {
+      "title": "Event API",
+      "version": "v1"
+    },
+    "servers": [
+      { "url": "https://openapi-839563206788.us-central1.run.app/" }
+    ],
+    "tags": [
+      {
+        "name": "events",
+        "description": "Operations on events"
+      }
+    ],
+    "openapi": "3.0.3",
+    "components": {
+      "schemas": {
+        "Error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "integer",
+              "description": "Error code"
+            },
+            "status": {
+              "type": "string",
+              "description": "Error name"
+            },
+            "message": {
+              "type": "string",
+              "description": "Error message"
+            },
+            "errors": {
+              "type": "object",
+              "description": "Errors",
+              "additionalProperties": {
+  
+              }
+            }
+          }
+        },
+        "PaginationMetadata": {
+          "type": "object",
+          "properties": {
+            "total": {
+              "type": "integer"
+            },
+            "total_pages": {
+              "type": "integer"
+            },
+            "first_page": {
+              "type": "integer"
+            },
+            "last_page": {
+              "type": "integer"
+            },
+            "page": {
+              "type": "integer"
+            },
+            "previous_page": {
+              "type": "integer"
+            },
+            "next_page": {
+              "type": "integer"
+            }
+          }
+        },
+        "Event": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "readOnly": true
+            },
+            "name": {
+              "type": "string",
+              "description": "The name of the event."
+            },
+            "date": {
+              "type": "string",
+              "format": "date",
+              "description": "The date of the event (YYYY-MM-DD)."
+            },
+            "description": {
+              "type": "string",
+              "description": "A short description of the event."
+            }
+          },
+          "required": [
+            "date",
+            "name"
+          ]
+        },
+        "EventUpdate": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The name of the event."
+            },
+            "date": {
+              "type": "string",
+              "format": "date",
+              "description": "The date of the event (YYYY-MM-DD)."
+            },
+            "description": {
+              "type": "string",
+              "description": "A short description of the event."
+            }
+          }
+        }
+      },
+      "responses": {
+        "DEFAULT_ERROR": {
+          "description": "Default error response",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        },
+        "UNPROCESSABLE_ENTITY": {
+          "description": "Unprocessable Entity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Error"
+              }
+            }
+          }
+        }
+      }
+    }
+  }

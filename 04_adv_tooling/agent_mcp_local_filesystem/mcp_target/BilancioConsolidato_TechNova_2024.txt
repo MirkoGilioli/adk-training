@@ -1,0 +1,38 @@
+Bilancio Consolidato - TechNova Solutions S.p.A.
+Esercizio chiuso al 31 Dicembre 2024
+
+**Stato Patrimoniale**
+Attivo Corrente: € 15.200.000
+   Disponibilità Liquide: € 1.800.000
+   Crediti Commerciali: € 8.500.000 (di cui € 1.200.000 scaduti oltre 90gg)
+   Rimanenze: € 4.900.000
+Attivo Non Corrente: € 22.500.000
+   Immobilizzazioni Materiali: € 15.000.000
+   Immobilizzazioni Immateriali: € 7.500.000 (inclusi avviamento e brevetti)
+TOTALE ATTIVO: € 37.700.000
+
+Passivo Corrente: € 9.800.000
+   Debiti Commerciali: € 4.500.000
+   Debiti verso Banche (a breve): € 3.000.000
+   Ratei e Risconti Passivi: € 2.300.000
+Passivo Non Corrente: € 12.000.000
+   Debiti verso Banche (a lungo): € 8.000.000 (di cui € 2.500.000 con scadenza 2026)
+   Fondi Rischi e Oneri: € 4.000.000
+Patrimonio Netto: € 15.900.000
+TOTALE PASSIVO E PATRIMONIO NETTO: € 37.700.000
+
+**Conto Economico**
+Ricavi delle Vendite: € 35.000.000
+Costi di Produzione e Servizi: (€ 22.000.000)
+Margine Lordo: € 13.000.000
+Costi di Vendita e Amministrativi: (€ 9.500.000)
+EBITDA: € 3.500.000
+Ammortamenti e Svalutazioni: (€ 2.500.000)
+EBIT: € 1.000.000
+Oneri Finanziari: (€ 700.000)
+Utile (Perdita) prima delle imposte: € 300.000
+Imposte sul Reddito: (€ 100.000)
+**Utile Netto: € 200.000**
+
+**Note aggiuntive:** La società ha investito pesantemente in R&D nel 2024, con un impatto sul risultato finale. Prevista crescita del 15% dei ricavi per il 2025.
+
