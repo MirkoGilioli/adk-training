@@ -6,14 +6,14 @@ def save_attractions_to_state(
     tool_context: ToolContext,
     attractions: List[str]
 ) -> dict[str, str]:
-    """
-    Saves the list of attractions to the state["attractions"]
+    """Saves a list of attractions to the tool context state.
 
-        Args:
-          attractions[str]: a list of strings to add to the list of attractions
-        
-        Returns:
-          None
+    Args:
+        tool_context (ToolContext): The context for the tool, providing access to state.
+        attractions (List[str]): A list of attraction names to add to the state.
+
+    Returns:
+        dict[str, str]: A dictionary indicating the status of the operation.
     """
     existing_attractions = tool_context.state.get("attractions", [])
     tool_context.state["attractions"] = existing_attractions + attractions
